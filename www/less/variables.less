@@ -1,0 +1,49 @@
+@brand-font             : 'Oswald', sans-serif;
+@brand-color     : #fff;
+
+.transition(@prop: all, @dur: 0.3s, @ease: ease) {
+	-webkit-transition: @prop @dur @ease;
+	-moz-transition   : @prop @dur @ease;
+	transition        : @prop @dur @ease;
+}
+
+.bg-image(@bg-pos: center center, @bg-rep: no-repeat, @bg-size: cover) {
+	background-position    : @bg-pos;
+	background-repeat      : @bg-rep;
+	-webkit-background-size: @bg-size;
+	background-size        : @bg-size;
+}
+.centered(){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.font(@font-face, @font-name, @font-wieght) {
+	@font-face {
+		font-family: @font-name;
+		src: url('../_fonts/@{font-face}.eot');
+		src: url('../_fonts/@{font-face}.eot?iefix') format('eot'),
+			url('../_fonts/@{font-face}.woff') format('woff'),
+			url('../_fonts/@{font-face}.ttf') format('truetype'),
+			url('../_fonts/@{font-face}.svg') format('svg');
+		font-weight: @font-wieght;
+		font-style: normal;
+	}
+}
+
+.placeholder(@rules) {
+
+    &::-webkit-input-placeholder {
+        @rules();
+    }
+    &:-moz-placeholder {
+        @rules();
+    }
+    &::-moz-placeholder {
+        @rules();
+    }
+    &:-ms-input-placeholder {
+        @rules();
+    }
+}

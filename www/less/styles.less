@@ -1,0 +1,89 @@
+@import "variables.less";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*menu button*/
+.menu-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    z-index: 100;
+    display: none;
+
+}
+
+.menu-button:hover {
+    cursor: pointer;
+}
+
+.menu-button span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    position: relative;
+    transition: background 0s 0.3s;
+    border-radius: 5px;
+}
+
+.menu-button span:after,
+.menu-button span:before {
+    content: '';
+    align-content: space-between;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+    border-radius: 5px;
+}
+
+.menu-button span:after {
+    top: -7px;
+    transition-property: top, transform;
+}
+
+.menu-button span:before {
+    bottom: -7px;
+    transition-property: bottom, transform;
+}
+
+.menu-button.open span:after {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-button.open span {
+    background: transparent;
+}
+
+.menu-button.open span:before {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-button.open span:after,
+.menu-button.open span:before {
+    transition-delay: 0s, 0.3s;
+}
