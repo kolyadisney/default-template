@@ -23,7 +23,6 @@
 </head>
 
 <body>
-
 		<header class="main-header">
 			<nav class="navbar navbar-expand-md">
 				<div class="container">
